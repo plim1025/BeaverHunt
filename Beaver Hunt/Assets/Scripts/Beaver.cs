@@ -14,6 +14,7 @@ public class Beaver : MonoBehaviour
     {
         PlayerInput();
         Move();
+        ChangeOrientation();
     }
 
 
@@ -35,6 +36,15 @@ public class Beaver : MonoBehaviour
     void Move(){
         transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
 
+    }
+
+    void ChangeOrientation(){
+        if(direction== Vector2.left){
+            transform.localScale = new Vector3(1,1,1);
+        }
+        if(direction== Vector2.right){
+            transform.localScale = new Vector3(-1,1,1);
+        }
     }
     
 }
