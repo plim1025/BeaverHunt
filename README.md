@@ -1,5 +1,5 @@
 # BeaverHunt
 
 Contributors: 
-Paul Lim
+Paul Lim\n
 Yiu Tran
