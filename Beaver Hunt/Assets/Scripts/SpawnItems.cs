@@ -2,16 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnDucks : MonoBehaviour
+public class SpawnItems : MonoBehaviour
 {
+    public GameObject plankPrefab;
+    public GameObject duckPrefab;
+    public int counter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        spawnPlanks();
         
     }
-    public GameObject duckPrefab;
-    public int counter = 0;
-    // Start is called before the first frame update
+
+    private void spawnPlanks() {
+        for(int i = -3; i <= 3; i++) {
+            for(int j = -3; j <= 3; j++) {
+                int num = Random.Range(0, 8);
+                if(num == 1) {
+                    GameObject plank = Instantiate(plankPrefab) as GameObject;
+                    plank.transform.position = new Vector3(i*10, j*10, 0); 
+                }
+            }
+        }
+    }
 
     private void spawnDucks() {
         counter++;
@@ -33,5 +47,4 @@ public class SpawnDucks : MonoBehaviour
     {
         spawnDucks();
     }
-
 }
