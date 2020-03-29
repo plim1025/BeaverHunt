@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Beaver : MonoBehaviour
 {
-    public float speed = 4.0f;
+    public float speed = 10.0f;
     private Vector2 direction = Vector3.zero;
     void Start()
     {
@@ -33,8 +33,9 @@ public class Beaver : MonoBehaviour
     }
 
     void Move(){
-        transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
-
+        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 34 && direction.y == 1) && !(transform.position.y < -34 && direction.y == -1)) {
+            transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
+        }
     }
     
 }
