@@ -4,32 +4,10 @@ using UnityEngine;
 
 public class Duck : MonoBehaviour
 {
-/*     public float speed = 3.9f;
+    public float speed = 10.0f;
+    private Vector2 direction = Vector3.zero;
+    private long counter;
 
-    public Node startarea;
-    public int scattermode1 = 7;
-    public int chasemode1 = 7;
-    public int scattermode2 = 7;
-    public int chasemode2 = 20;
-    public int scattermode3 = 7;
-    public int chasemode3 = 20;
-    public int scattermode3 = 5;
-    public int chasemode3 = 20;
-    public int scattermode4 = 6;
-    public int chasemode4 = 20;
-
-
-
-    private int modechange = 1;
-    private float modetimer = 0;
-
-    public enum Mode{
-        Chase, Scatter, Frightened
-    }
-
-    Mode current = Mode.Scatter;
-    Mode previousMode; */
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -38,10 +16,36 @@ public class Duck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+        ChangeOrientation();
+    }
+
+    void Move() {
+        counter++;
+        if(counter%100 == 0) {
+            int rand = Random.Range(0, 4);
+            if(rand == 0) {
+                direction = Vector2.left;
+            } else if (rand == 1) {
+                direction = Vector2.right;
+            } else if (rand == 2) {
+                direction = Vector2.down;
+            } else {
+                direction = Vector2.up;
+            }
+        }
         
-        // We add +1 to the x axis every frame.
-        // Time.deltaTime is the time it took to complete the last frame
-        // The result of this is that the object moves one unit on the x axis every second
-        transform.position += new Vector3(1 * Time.deltaTime, 0, 0);
+        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 35 && direction.y == 1) && !(transform.position.y < -35 && direction.y == -1)) {
+            transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
+        }
+    }
+
+    void ChangeOrientation(){
+        if(direction== Vector2.left){
+            transform.localScale = new Vector3(1,1,1);
+        }
+        if(direction== Vector2.right){
+            transform.localScale = new Vector3(-1,1,1);
+        }
     }
 }
