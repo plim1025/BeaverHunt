@@ -9,10 +9,11 @@ public class Beaver : MonoBehaviour
     
     void Start()
     {
-        
+
     }
     private void Update()
     {
+        print(transform.localScale);
         PlayerInput();
         Move();
         ChangeOrientation();
@@ -35,17 +36,17 @@ public class Beaver : MonoBehaviour
     }
 
     void Move(){
-        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 34 && direction.y == 1) && !(transform.position.y < -34 && direction.y == -1)) {
+        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 35 && direction.y == 1) && !(transform.position.y < -35 && direction.y == -1)) {
             transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
         }
     }
 
     void ChangeOrientation(){
         if(direction== Vector2.left){
-            transform.localScale = new Vector3(1,1,1);
+            transform.localScale = new Vector3(2,2,2);
         }
         if(direction== Vector2.right){
-            transform.localScale = new Vector3(-1,1,1);
+            transform.localScale = new Vector3(-2,2,2);
         }
     }
     

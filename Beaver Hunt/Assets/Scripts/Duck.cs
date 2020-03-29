@@ -16,6 +16,11 @@ public class Duck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+        ChangeOrientation();
+    }
+
+    void Move() {
         counter++;
         if(counter%100 == 0) {
             int rand = Random.Range(0, 4);
@@ -30,8 +35,17 @@ public class Duck : MonoBehaviour
             }
         }
         
-        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 34 && direction.y == 1) && !(transform.position.y < -34 && direction.y == -1)) {
+        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 35 && direction.y == 1) && !(transform.position.y < -35 && direction.y == -1)) {
             transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
+        }
+    }
+
+    void ChangeOrientation(){
+        if(direction== Vector2.left){
+            transform.localScale = new Vector3(1,1,1);
+        }
+        if(direction== Vector2.right){
+            transform.localScale = new Vector3(-1,1,1);
         }
     }
 }
