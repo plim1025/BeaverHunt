@@ -6,14 +6,13 @@ public class Beaver : MonoBehaviour
 {
     public float speed = 11.0f;
     private Vector2 direction = Vector3.zero;
-    public bool power = 0;
+    public bool power = false;
     void Start()
     {
 
     }
     private void Update()
     {
-        print(transform.localScale);
         PlayerInput();
         Move();
         ChangeOrientation();
@@ -36,7 +35,7 @@ public class Beaver : MonoBehaviour
     }
 
     void Move(){
-        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 35 && direction.y == 1) && !(transform.position.y < -35 && direction.y == -1)) {
+        if(!(transform.position.x > 38 && direction.x == 1) && !(transform.position.x < -38 && direction.x == -1) && !(transform.position.y > 40 && direction.y == 1) && !(transform.position.y < -40 && direction.y == -1)) {
             transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
         }
     }
@@ -63,17 +62,24 @@ public class Beaver : MonoBehaviour
 */
     private void OnTriggerEnter2D(Collider2D other){
         //Destory(other.gameObject);
-        if(other.GetType=="Plank"){
+        if(other.gameObject.name.Contains("Plank")){
             other.gameObject.SetActive(false);
             power = true;
         }
-        if(other.GetType=="Duck(4)"){
+        if(other.gameObject.name == "Big Duck"){
+            // Player loses
+            if(!power) {
+                other.gameObject.SetActive(false);
+                Application.Quit();
+            }
+            // Player wins
+            else {
+                Application.Quit();
+            }
+        } else if(other.gameObject.name.Contains("Duck")){
             other.gameObject.SetActive(false);
-            Application.Quit();
-        }
-        if(other.GetType=="Duck(3)"){
-            other.gameObject.SetActive(false);
-            score++;
+            var scoreboard = GameObject.Find("Scoreboard");
+            // print(scoreboard.text);
         }
     }
     
