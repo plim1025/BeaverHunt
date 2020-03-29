@@ -48,4 +48,8 @@ public class Beaver : MonoBehaviour
             transform.localScale = new Vector3(-2,2,2);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collider) {
+        print("Triggered");
+    }
 }
