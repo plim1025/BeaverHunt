@@ -40,10 +40,10 @@ public class Beaver : MonoBehaviour
 
     void ChangeOrientation(){
         if(direction== Vector2.left){
-            transform.localScale = new Vector3(1,1,1);
+            transform.localScale = new Vector3(3,3,2);
         }
         if(direction== Vector2.right){
-            transform.localScale = new Vector3(-1,1,1);
+            transform.localScale = new Vector3(-3,3,2);
         }
     }
     
