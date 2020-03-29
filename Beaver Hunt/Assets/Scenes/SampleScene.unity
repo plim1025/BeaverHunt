@@ -222,7 +222,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 2
 --- !u!50 &121780294
 Rigidbody2D:
   serializedVersion: 4
@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 1212866257}
   - component: {fileID: 1212866256}
   - component: {fileID: 1212866255}
+  - component: {fileID: 1212866258}
   m_Layer: 0
   m_Name: Duck (1)
   m_TagString: Untagged
@@ -617,6 +618,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1212866258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212866254}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5.03}
+    newSize: {x: 5, y: 5.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5.03}
+  m_EdgeRadius: 0
 --- !u!1 &1295627243
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +655,7 @@ GameObject:
   - component: {fileID: 1295627246}
   - component: {fileID: 1295627245}
   - component: {fileID: 1295627244}
+  - component: {fileID: 1295627247}
   m_Layer: 0
   m_Name: Duck (3)
   m_TagString: Untagged
@@ -710,6 +738,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1295627247
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295627243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5.03}
+    newSize: {x: 5, y: 5.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5.03}
+  m_EdgeRadius: 0
 --- !u!1 &1329489161
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +775,7 @@ GameObject:
   - component: {fileID: 1329489163}
   - component: {fileID: 1329489162}
   - component: {fileID: 1329489164}
+  - component: {fileID: 1329489165}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -803,6 +858,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!61 &1329489165
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329489161}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5.03}
+    newSize: {x: 5, y: 5.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5.03}
+  m_EdgeRadius: 0
 --- !u!1 &2123670386
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +896,7 @@ GameObject:
   - component: {fileID: 2123670388}
   - component: {fileID: 2123670387}
   - component: {fileID: 2123670390}
+  - component: {fileID: 2123670391}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -900,6 +982,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plankPrefab: {fileID: 6453576823558851809, guid: 5601f5b657df9ac489bd348b35f7c429,
     type: 3}
+--- !u!61 &2123670391
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123670386}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &2143628533
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +1019,7 @@ GameObject:
   - component: {fileID: 2143628536}
   - component: {fileID: 2143628535}
   - component: {fileID: 2143628534}
+  - component: {fileID: 2143628537}
   m_Layer: 0
   m_Name: Duck (2)
   m_TagString: Untagged
@@ -993,3 +1102,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2143628537
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143628533}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5.03}
+    newSize: {x: 5, y: 5.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5.03}
+  m_EdgeRadius: 0

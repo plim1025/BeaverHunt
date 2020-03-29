@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Beaver : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float speed = 11.0f;
     private Vector2 direction = Vector3.zero;
-    
+    public bool power = 0;
     void Start()
     {
-        
+
     }
     private void Update()
     {
+        print(transform.localScale);
         PlayerInput();
         Move();
         ChangeOrientation();
@@ -35,7 +36,7 @@ public class Beaver : MonoBehaviour
     }
 
     void Move(){
-        if(!(transform.position.x > 38 && direction.x == 1) && !(transform.position.x < -38 && direction.x == -1) && !(transform.position.y > 40 && direction.y == 1) && !(transform.position.y < -40 && direction.y == -1)) {
+        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 35 && direction.y == 1) && !(transform.position.y < -35 && direction.y == -1)) {
             transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
         }
     }
@@ -48,8 +49,32 @@ public class Beaver : MonoBehaviour
             transform.localScale = new Vector3(-2,2,2);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collider) {
-        print("Triggered");
+/*
+    GameObject getposition(Vector2 pos){
+        int tilex = Mathf.RoundToInt(pos.x);
+        int tiley = Mathf.RoundToInt(pos.y);
+        //GameObject tile =
+        if(tile != null){
+            return tile;
+        }
+        else
+            return null;
     }
+*/
+    private void OnTriggerEnter2D(Collider2D other){
+        //Destory(other.gameObject);
+        if(other.GetType=="Plank"){
+            other.gameObject.SetActive(false);
+            power = true;
+        }
+        if(other.GetType=="Duck(4)"){
+            other.gameObject.SetActive(false);
+            Application.Quit();
+        }
+        if(other.GetType=="Duck(3)"){
+            other.gameObject.SetActive(false);
+            score++;
+        }
+    }
+    
 }
