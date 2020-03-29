@@ -36,7 +36,7 @@ public class Beaver : MonoBehaviour
     }
 
     void Move(){
-        if(!(transform.position.x > 35 && direction.x == 1) && !(transform.position.x < -35 && direction.x == -1) && !(transform.position.y > 35 && direction.y == 1) && !(transform.position.y < -35 && direction.y == -1)) {
+        if(!(transform.position.x > 38 && direction.x == 1) && !(transform.position.x < -38 && direction.x == -1) && !(transform.position.y > 40 && direction.y == 1) && !(transform.position.y < -40 && direction.y == -1)) {
             transform.position += ((Vector3)(direction * speed)) * Time.deltaTime;
         }
     }
@@ -49,5 +49,4 @@ public class Beaver : MonoBehaviour
             transform.localScale = new Vector3(-2,2,2);
         }
     }
-    
 }
