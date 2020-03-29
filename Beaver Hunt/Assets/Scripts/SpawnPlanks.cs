@@ -15,7 +15,7 @@ public class SpawnPlanks : MonoBehaviour
     private void spawnPlanks() {
         for(int i = -3; i <= 3; i++) {
             for(int j = -3; j <= 3; j++) {
-                int num = Random.Range(0, 2);
+                int num = Random.Range(0, 8);
                 print(num);
                 if(num == 1) {
                     GameObject plank = Instantiate(plankPrefab) as GameObject;
