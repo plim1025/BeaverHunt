@@ -9,7 +9,7 @@ public class Beaver : MonoBehaviour
     
     void Start()
     {
-
+        
     }
     private void Update()
     {
