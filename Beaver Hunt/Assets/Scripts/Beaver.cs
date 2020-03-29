@@ -13,7 +13,6 @@ public class Beaver : MonoBehaviour
     }
     private void Update()
     {
-        print(transform.localScale);
         PlayerInput();
         Move();
         ChangeOrientation();
