@@ -11,4 +11,4 @@ When the Beaver picks up wood the score mulitiplier is increased and allows the 
 The Game is won when the Beaver tags all the small ducks.  
 The Game is lost when the Big Duck tags the Beaver.  
 
-![BeaverHunt Screenshot](https://raw.githubusercontent.com/plim1025/BeaverHunt/Screebshot.png)
+![BeaverHunt Screenshot](https://github.com/plim1025/BeaverHunt/blob/master/Screenshot.PNG)
