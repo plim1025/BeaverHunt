@@ -23,16 +23,16 @@ public class Beaver : MonoBehaviour
 
 
     void PlayerInput(){
-        if(Input.GetKeyDown(KeyCode.LeftArrow)){
+        if(Input.GetKeyDown(KeyCode.A)){
             direction = Vector2.left;
         }
-        else if(Input.GetKeyDown(KeyCode.RightArrow)){
+        else if(Input.GetKeyDown(KeyCode.D)){
             direction = Vector2.right;
         }
-        else if(Input.GetKeyDown(KeyCode.DownArrow)){
+        else if(Input.GetKeyDown(KeyCode.S)){
             direction = Vector2.down;
         }
-        else if(Input.GetKeyDown(KeyCode.UpArrow)){
+        else if(Input.GetKeyDown(KeyCode.W)){
             direction = Vector2.up;
         }
     }
