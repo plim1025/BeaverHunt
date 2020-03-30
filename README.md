@@ -1,4 +1,4 @@
-# BeaverHunt
+# Beaver Hunt
 
 Contributors:  
 Paul Lim  
