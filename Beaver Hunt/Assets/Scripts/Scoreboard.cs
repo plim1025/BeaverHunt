@@ -6,10 +6,14 @@ public class Scoreboard : MonoBehaviour
 {
     private static int score = 0;
     private static int scoremultiplier = 1;
-
+    private static int scoremultiplier1 = 1;
     public static void addMultiplier()
     {
         scoremultiplier++;
+    }
+    public static void addMultiplier1()
+    {
+        scoremultiplier1++;
     }
     public static int newchange(int result)
     {
@@ -19,7 +23,7 @@ public class Scoreboard : MonoBehaviour
     void Update()
     {
         // Set the text of the attached Text mesh
-        GetComponent<TextMesh>().text = "Score: " + score + "     Multiplier: " +scoremultiplier;
+        GetComponent<TextMesh>().text = "Score: " + score + "     Multiplier1: " +scoremultiplier+"     Multiplier1: " +scoremultiplier1;
         if(score == -1){
             GetComponent<TextMesh>().text = "Game Over!";
         }
