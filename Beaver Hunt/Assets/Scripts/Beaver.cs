@@ -5,8 +5,10 @@ using UnityEngine;
 public class Beaver : MonoBehaviour
 {
     public float speed = 11.0f;
+    public int wood = 1;
     private Vector2 direction = Vector3.zero;
-    public bool power = false;
+    // private TextMesh scoreboard;
+
     void Start()
     {
 
@@ -16,6 +18,7 @@ public class Beaver : MonoBehaviour
         PlayerInput();
         Move();
         ChangeOrientation();
+        DetectWin();
     }
 
 
@@ -48,39 +51,34 @@ public class Beaver : MonoBehaviour
             transform.localScale = new Vector3(-2,2,2);
         }
     }
-/*
-    GameObject getposition(Vector2 pos){
-        int tilex = Mathf.RoundToInt(pos.x);
-        int tiley = Mathf.RoundToInt(pos.y);
-        //GameObject tile =
-        if(tile != null){
-            return tile;
-        }
-        else
-            return null;
-    }
-*/
+
     private void OnTriggerEnter2D(Collider2D other){
-        //Destory(other.gameObject);
+        // scoreboard = (TextMesh)GameObject.Find ("Scoreboard").GetComponent<TextMesh>();
+            
         if(other.gameObject.name.Contains("Plank")){
-            other.gameObject.SetActive(false);
-            power = true;
+            wood+=1;
+            Scoreboard.addMultiplier();
+            Destroy(other.gameObject);
         }
         if(other.gameObject.name == "Big Duck"){
-            // Player loses
-            if(!power) {
-                other.gameObject.SetActive(false);
-                Application.Quit();
-            }
-            // Player wins
-            else {
-                Application.Quit();
-            }
+            Destroy(other.gameObject);
+            Application.Quit();
         } else if(other.gameObject.name.Contains("Duck")){
-            other.gameObject.SetActive(false);
-            var scoreboard = GameObject.Find("Scoreboard");
-            // print(scoreboard.text);
+            Destroy(other.gameObject);
+            Scoreboard.newchange(100*wood);
         }
     }
     
+    void DetectWin() {
+        int count = 0;
+        GameObject duck = GameObject.Find("Duck");
+        GameObject duck1 = GameObject.Find("Duck (1)");
+        GameObject duck2 = GameObject.Find("Duck (2)");
+        GameObject duck3 = GameObject.Find("Duck (3)");
+        GameObject duckClone = GameObject.Find("Duck(Clone)");
+        if(duck == null && duck1 == null && duck2 == null && duck3 == null && duckClone == null) {
+            Application.Quit();
+        }
+    }
+
 }

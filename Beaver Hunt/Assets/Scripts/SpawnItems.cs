@@ -21,7 +21,7 @@ public class SpawnItems : MonoBehaviour
                 int num = Random.Range(0, 8);
                 if(num == 1) {
                     GameObject plank = Instantiate(plankPrefab) as GameObject;
-                    plank.transform.position = new Vector3(i*10, j*10, 0); 
+                    plank.transform.position = new Vector3(i*10, j*10, 0);
                 }
             }
         }
@@ -29,16 +29,11 @@ public class SpawnItems : MonoBehaviour
 
     private void spawnDucks() {
         counter++;
-        if(counter%300==0){
-          for(int j = -1; j<=1; j++){
-            for(int i = -2; i <= 1; i++) {
-               int num = Random.Range(0, 8);
-               if(num == 1) {
-                 GameObject Duck = Instantiate(duckPrefab) as GameObject;
-                 Duck.transform.position = new Vector3(i*10, j*10, 0); 
-               }
-            }
-          }
+        if(counter%10000==0){
+            int x = Random.Range(-35, 35);
+            int y = Random.Range(-35, 35);
+            GameObject Duck = Instantiate(duckPrefab) as GameObject;
+            Duck.transform.position = new Vector3(x, y, 0);
         }
     }
 
